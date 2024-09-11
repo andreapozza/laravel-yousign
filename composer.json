@@ -15,10 +15,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "saloonphp/saloon": "^3.0",
-        "saloonphp/pagination-plugin": "^2.0",
-        "saloonphp/rate-limit-plugin": "^2.0",
-        "illuminate/support": "^10.0|^11.0"
+        "illuminate/support": "^10.0|^11.0",
+        "andreapozza/yousign-php": "self.version"
     },
     "extra": {
         "laravel": {
@@ -28,6 +26,12 @@
             "aliases": {
                 "YouSign": "Andreapozza\\LaravelYousign\\Facades\\YouSign"
             }
+        }
+    },
+    "repositories": {
+        "andreapozza/yousign-php": {
+            "type": "vcs",
+            "url": "https://github.com/andreapozza/yousign-php"
         }
     }
 }

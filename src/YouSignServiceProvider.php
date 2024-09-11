@@ -2,6 +2,7 @@
 
 namespace Andreapozza\LaravelYousign;
 
+use Andreapozza\YouSign\YouSignConnector;
 use Illuminate\Support\ServiceProvider;
 
 class YouSignServiceProvider extends ServiceProvider
