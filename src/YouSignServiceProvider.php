@@ -13,6 +13,6 @@ class YouSignServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('yousign', fn () => new YouSignConnector);
+        $this->app->bind('yousign', fn () => new YouSignConnector(config('yousign.api_key'), config('yousign.mode', 'production')));
     }
 }

@@ -44,14 +44,20 @@ class YouSignConnector extends Connector implements HasPagination
     public static $perHourLimitThreshold = 1;
     public static $resolveLimits;
 
+    public function __construct(
+        public string $api_key,
+        public string $mode = 'production',
+    )
+    {}
+
 	public function resolveBaseUrl(): string
 	{
-		return config('yousign.mode') === 'production' ? 'https://api.yousign.app/v3' : 'https://api-sandbox.yousign.app/v3';
+		return $this->mode === 'production' ? 'https://api.yousign.app/v3' : 'https://api-sandbox.yousign.app/v3';
 	}
 
     protected function defaultAuth(): TokenAuthenticator
     {
-        return new TokenAuthenticator(config('yousign.token'));
+        return new TokenAuthenticator($this->api_key);
     }
 
     protected function defaultHeaders(): array
